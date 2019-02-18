@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,7 +11,13 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+        ArrayList odds = new ArrayList();
+           for (int i: ints) {
+                if (i%2 != 0) {
+                    odds.add(i);
+        }
+    } Integer[] arr = (Integer[])odds.toArray(new Integer[odds.size()]);
+           return arr;
     }
 
     /**
@@ -19,7 +26,13 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        ArrayList evens = new ArrayList();
+        for (int i: ints) {
+            if (i%2 == 0) {
+                evens.add(i);
+            }
+        } Integer[] arr = (Integer[])evens.toArray(new Integer[evens.size()]);
+        return arr;
     }
 
     /**
@@ -28,7 +41,13 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+        ArrayList threes = new ArrayList();
+        for (int i: ints) {
+            if (i%3 != 0) {
+                threes.add(i);
+            }
+        } Integer[] arr = (Integer[])threes.toArray(new Integer[threes.size()]);
+        return arr;
     }
 
     /**
@@ -38,6 +57,12 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        ArrayList multiples = new ArrayList();
+        for (int i: ints) {
+            if (i%multiple != 0) {
+                multiples.add(i);
+            }
+        } Integer[] arr = (Integer[])multiples.toArray(new Integer[multiples.size()]);
+        return arr;
     }
 }

@@ -1,4 +1,5 @@
 package com.zipcodewilmington.assessment1.part2;
+import java.util.Collections;
 
 /**
  * Created by leon on 2/16/18.
@@ -11,7 +12,8 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+      return null;
+      //  return int occurrences = Collections.frequency(objectArray, objectToCount);;
     }
 
     /**
