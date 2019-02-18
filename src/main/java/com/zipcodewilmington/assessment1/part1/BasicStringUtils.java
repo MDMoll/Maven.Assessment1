@@ -17,7 +17,7 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        return new StringBuilder(str).reverse().toString();
     }
 
     /**
@@ -42,6 +42,17 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        char letter;
+        String message = "";
+        for (int i = 0; i < str.length(); i++) {
+            letter = str.charAt(i);
+            if (letter >= 'a' && letter <= 'z') {
+                letter = (char) (letter - 32);
+            } else if (str.charAt(i) >= 'A' && letter <= 'Z') {
+                letter = (char) (letter + 32);
+            }
+            message += letter;
+        }
+        return message;
     }
 }
