@@ -5,29 +5,32 @@ package com.zipcodewilmington.assessment1.part3;
  */
 public class Cat extends Pet {
     private String name;
-    private int age;
+    private Integer age;
+    private String owner;
+
+
     /**
      * @param name name of this Cat
-     * @param age age of this Cat
+     * @param age  age of this Cat
      */
-    public Cat(String name, Integer age) { {
-        this.name = name;
-        this.age = age;
-    }
+    public Cat(String name, Integer age) {
+        super(name, age);
+        //this.name = name;
+        //this.age = age;
     }
 
     /**
      * @param age age of this Cat
      */
     public Cat(Integer age) {
-        this.age = age;
+        super(age);
     }
 
     /**
      * @param name name of this Cat
      */
     public Cat(String name) {
-        this.name = name;
+        super(name);
     }
 
     /**
@@ -37,8 +40,7 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
-        name = "Cat name";
-        age = 0;
+        this("Cat name", 0);
     }
 
     /**
