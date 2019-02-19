@@ -7,29 +7,15 @@ import java.util.List;
 public class Palindrome {
 
     public Integer countPalindromes(String input) {
-
-        if (input.charAt(0) == 'a') {
-            return input.length() + 3;
-        } else if (input.charAt(0) == 'd'){
-            return input.length() + 2;
-        } else if (input.length() == 1000) {return 1084;}
-        else {
-            ArrayList<String> perms = new ArrayList<>();
-            if (input.length() == 1) {
-                perms.add(input);
-            } else {
-                String chr = input.substring(0, 1);
-                String rest = input.substring(1);
-                ArrayList<String> subPerms = new ArrayList<>();
-                subPerms.add(rest);
-                for (String s : subPerms) {
-                    for (int j = 0; j <= s.length(); j++) {
-                        String newPerm = s.substring(0, j) + chr + s.substring(j);
-                        perms.add(newPerm);
+            Integer count = 0;
+            for (int i = 0; i < input.length(); i++) {
+                for (int j = input.length(); j > i; j--) {
+                    String reversed = new StringBuilder (input.substring(i, j)).reverse().toString();
+                    if (input.substring(i, j).equals(reversed)) {
+                        count++;
                     }
                 }
             }
-            return perms.size();
+            return count;
         }
     }
-}
